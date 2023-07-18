@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_array">
+        <item>Красные вина</item>
+        <item>Белые вина</item>
+        <item>Розовые вина</item>
+    </string-array>
+    <string-array name="sugar_array">
+        <item>Сухие</item>
+        <item>Полусухие и полусладкие</item>
+        <item>Сладкие</item>
+    </string-array>
+    <string-array name="carbon_dioxide_array">
+        <item>Тихие вина</item>
+        <item>Игристые вина</item>
+    </string-array>
+    <string-array name="fortress_array">
+        <item>Легкие — до 11% этилового спирта;</item>
+        <item>Средние — 12-14% спирта;</item>
+        <item>Крепкие — выше 14%.</item>
+    </string-array>
+    <string-array name="variety_array">
+        <item>Шардоне</item>
+        <item>Каберне совиньон</item>
+        <item>Мерло</item>
+        <item>Совиньон блан</item>
+    </string-array>
+</resources>
