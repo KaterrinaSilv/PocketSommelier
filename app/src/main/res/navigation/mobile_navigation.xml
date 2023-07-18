@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="ru.neco_tutor.pocketsommelier.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_color"
+        android:name="ru.neco_tutor.pocketsommelier.ColorFragment"
+        android:label="@string/menu_by_color"
+        tools:layout="@layout/fragment_color"/>
+
+    <fragment
+        android:id="@+id/nav_sugar"
+        android:name="ru.neco_tutor.pocketsommelier.ui.gallery.GalleryFragment"
+        android:label="@string/menu_by_sugar"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_carbon_dioxide"
+        android:name="ru.neco_tutor.pocketsommelier.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_carbon_dioxide"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_fortress"
+        android:name="ru.neco_tutor.pocketsommelier.FortressFragment"
+        android:label="@string/menu_fortress"
+        tools:layout="@layout/fragment_fortress"/>
+    <fragment
+        android:id="@+id/nav_grape_variety"
+        android:name="ru.neco_tutor.pocketsommelier.VarietyFragment"
+        android:label="@string/menu_grape_variety"
+        tools:layout="@layout/fragment_variety"/>
+
+</navigation>
