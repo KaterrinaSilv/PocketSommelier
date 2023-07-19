@@ -1,6 +1,7 @@
 package ru.neco_tutor.pocketsommelier;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ public class ActivityContent extends AppCompatActivity {
 
     private ActivityContentBinding binding;
     private TextView textView;
+    private Typeface typeface;
     private int category;
     private int position;
 
@@ -20,7 +22,7 @@ public class ActivityContent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityContentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        textView = binding.textView;
+        init();
         receiveIntent();
 
     }
@@ -87,5 +89,10 @@ public class ActivityContent extends AppCompatActivity {
                 }
                 break;
         }
+    }
+    private void init(){
+        textView = binding.textView;
+        typeface = Typeface.createFromAsset(this.getAssets(), "fonts/Bitter/static/Bitter-Italic.ttf");
+        textView.setTypeface(typeface);
     }
 }
