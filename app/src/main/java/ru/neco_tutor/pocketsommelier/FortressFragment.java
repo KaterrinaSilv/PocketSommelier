@@ -1,9 +1,11 @@
 package ru.neco_tutor.pocketsommelier;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -23,6 +25,7 @@ public class FortressFragment extends Fragment {
     private ListView listView;
     private String[] arrays;
     private ArrayAdapter<String> arrayAdapter;
+    private final int category = 3;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,6 +37,17 @@ public class FortressFragment extends Fragment {
         arrays = getResources().getStringArray(R.array.fortress_array);
         arrayAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, new ArrayList<String>(Arrays.asList(arrays)));
         listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), ActivityContent.class);
+                intent.putExtra("category", category);
+                intent.putExtra("position", position);
+                startActivity(intent);
+
+            }
+        });
 
         return root;
     }
