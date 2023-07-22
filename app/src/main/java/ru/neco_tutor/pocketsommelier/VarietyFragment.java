@@ -1,6 +1,7 @@
 package ru.neco_tutor.pocketsommelier;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,6 +25,8 @@ public class VarietyFragment extends Fragment {
 
     private ListView listView;
     private String[] arrays;
+    private TextView textView;
+    private Typeface typeface;
     private ArrayAdapter<String> arrayAdapter;
     private final int category = 4;
 
@@ -32,6 +36,9 @@ public class VarietyFragment extends Fragment {
         binding = FragmentVarietyBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        textView = binding.textView3;
+        typeface = Typeface.createFromAsset(this.getActivity().getAssets(), "fonts/Bitter/static/Bitter-Italic.ttf");
+        textView.setTypeface(typeface);
 
         listView = binding.varietyList;
         arrays = getResources().getStringArray(R.array.variety_array);

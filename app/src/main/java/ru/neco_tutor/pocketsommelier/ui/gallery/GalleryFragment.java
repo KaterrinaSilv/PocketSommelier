@@ -1,6 +1,7 @@
 package ru.neco_tutor.pocketsommelier.ui.gallery;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -26,6 +28,8 @@ public class GalleryFragment extends Fragment {
     private ListView listView;
     private String[] arrays;
     private ArrayAdapter<String> arrayAdapter;
+    private TextView textView;
+    private Typeface typeface;
 
     private final int category = 1;
 
@@ -36,6 +40,10 @@ public class GalleryFragment extends Fragment {
 
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        textView = binding.textView3;
+        typeface = Typeface.createFromAsset(this.getActivity().getAssets(), "fonts/Bitter/static/Bitter-Italic.ttf");
+        textView.setTypeface(typeface);
 
         listView = binding.sugarList;
         arrays = getResources().getStringArray(R.array.sugar_array);

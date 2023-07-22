@@ -1,6 +1,7 @@
 package ru.neco_tutor.pocketsommelier;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,12 +25,18 @@ public class ColorFragment extends Fragment {
     private String[] arrays;
     private ArrayAdapter<String> arrayAdapter;
     private final int category = 0;
+    private TextView textView;
+    private Typeface typeface;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentColorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        textView = binding.textView4;
+        typeface = Typeface.createFromAsset(this.getActivity().getAssets(), "fonts/Bitter/static/Bitter-Italic.ttf");
+        textView.setTypeface(typeface);
 
         listView = binding.colorList;
         arrays = getResources().getStringArray(R.array.color_array);
@@ -45,6 +53,7 @@ public class ColorFragment extends Fragment {
 
             }
         });
+
 
         return root;
     }
