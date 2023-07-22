@@ -1,5 +1,6 @@
 package ru.neco_tutor.pocketsommelier.ui.home;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import ru.neco_tutor.pocketsommelier.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private TextView textView;
+    private Typeface typeface;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -22,10 +25,12 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        textView = binding.textViewHome;
+        typeface = Typeface.createFromAsset(getActivity().getAssets(),"fonts/Bitter/static/Bitter-Italic.ttf");
+        textView.setTypeface(typeface);
+
+        View root = binding.getRoot();
         return root;
     }
 
