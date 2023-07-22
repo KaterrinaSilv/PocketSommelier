@@ -5,7 +5,8 @@
     <string name="nav_header_title">Путеводитель по винному миру</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Настройки</string>
+    <string name="main_text_size">Размер текста</string>
 
     <string name="home_fragment">\t Вино — алкогольный напиток, история которого насчитывает уже несколько тысячелетий, а потому не удивительно, что в мире существует такое разнообразие вин. \n \n Мы расскажем о том, по какому принципу они классифицируются, в чем принципиальное отличие вин из разных регионов и как начать разбираться в вине без помощи сомелье.
 
